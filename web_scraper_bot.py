@@ -104,4 +104,7 @@ if __name__ == "__main__":
     bot.navigate_and_fill()
     #bot.close()
     input("Press Enter to close the browser...")
+
+
+    
     
