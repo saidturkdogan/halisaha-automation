@@ -94,6 +94,37 @@ class WebScraperBot:
         radio_button = self.wait.until(EC.element_to_be_clickable((By.XPATH, '/html/body/form/section[1]/div/div/div/div/div/div/div/div[1]/div/div[1]/div/div/div[2]/input')))
         radio_button.click()
 
+        dropdown_type = WebDriverWait(self.driver,10).until(
+            EC.element_to_be_clickable((By.XPATH, '/html/body/form/section[1]/div/div/div/div/div/div/div/div[1]/div/div[2]/div[1]/div/div/div/span/span[1]/span/span[1]/span'))
+        )
+        dropdown_type.click()
+
+        futbol_option = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, '//li[contains(text(), "FUTBOL")]'))
+        )
+        futbol_option.click()
+
+        dropdown_province = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH,
+                                        '/html/body/form/section[1]/div/div/div/div/div/div/div/div[1]/div/div[2]/div[2]/div/div/div/span/span[1]/span/span[1]'))
+        )
+        dropdown_province.click()
+
+        proviince_option = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, '//li[contains(text(), "MALTEPE SAHİL SPOR TESİSİ")]'))
+        )
+        proviince_option.click()
+
+        button = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(
+                (By.XPATH, '/html/body/form/section[1]/div/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div/a'))
+        )
+        button.click()
+
+
+
+
+
     def close(self):
         # Tarayıcıyı kapatın
         #self.driver.quit()
