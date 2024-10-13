@@ -122,6 +122,19 @@ class WebScraperBot:
         button.click()
 
 
+        dropdown_halisaha = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH,
+                                        '/html/body/form/div[3]/div[3]/div[1]/div/div/div/div/div[3]/span[2]/span[1]/span/span[1]'))
+        )
+        dropdown_halisaha.click()
+
+        halisaha_option = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, '//li[contains(text(), "HALI SAHA 1")]'))
+        )
+        halisaha_option.click()
+
+
+
 
 
 
