@@ -55,9 +55,7 @@ class WebScraperBot:
             self._navigate_to_login()
             self._login("21935167880", "xajmeorDUNekG8N")
             self._close_modal()
-            self._select_radio_button()
-            self._select_dropdown("FUTBOL", "MALTEPE SAHİL SPOR TESİSİ")
-            self._click_search_button()
+            self.halisahAl()
         except Exception as e:
             print(f"An error occurred: {e}")
 
@@ -79,6 +77,9 @@ class WebScraperBot:
         self.wait.until(EC.presence_of_element_located((By.ID, 'txtSifre'))).send_keys(password)
         self.wait.until(EC.element_to_be_clickable((By.ID, 'btnGirisYap'))).click()
 
+    def halisahAl(self):
+        self.wait.until(EC.presence_of_element_located((By.XPATH,'/html/body/form/section[1]/div/div/div/div/div/div/ul/li[2]/a/span[2]'))).click()
+        self.wait.until(EC.presence_of_element_located((By.XPATH,'/html/body/form/section[1]/div/div/div/div/div/div/div/div[2]/div/div/div[1]/div/div/div/span/span[1]/span')))
 
 
     def close(self):
